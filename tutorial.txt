@@ -1,0 +1,11 @@
+1: npm init -y
+
+2: npm intall pdfmake
+
+3: index.js
+
+4:crair pasta font e add nela os arquivos fonts baixado do goolge font
+
+5: criar objeto fonts passado o caminho fonts/nomedafont.tts dentro dela
+
+6: passar uma variável docDefinition com um objeto com o content 
