@@ -12,12 +12,55 @@ const fonts = {
     }
 }
 
+//lines
+const lines = []
+//add tables fields
+lines.push([ 
+    {
+        text:'Nome',
+        style: 'header'
+    },
+     'Email',
+     'Status',
+     'Telefone'])
+
+//add values
+for(let i = 0; i<300; i++){
+    let ativo = 'ativo'
+    if(i%2===0){
+        ativo = {text: 'inativo', style:'inativo'}
+    }
+    lines.push(['Victor Honorato', 'vituhonorato@gmail.com', ativo, '71 987840407'])
+}
+
 //link new pdf with fonts on variable 'printer'
 const printer = new PdfPrinter(fonts)
 
-//pdf document content
+
+//pdf document models content 
 const docDefinition = {
-    content: 'PDF content'
+    content:[
+    {text:  'PDF content'},
+    {
+        table:{
+            //tables colums 
+            widths: ['*','*',100,'*'],
+            //tables lines
+            body: lines
+    }
+  }
+],
+styles:{
+    header: {
+        fontSize: 22,
+        bold: true
+    },
+    inativo:{
+        fontSize: 18,
+        bold: true
+    }
+}
+    
 }
 
 
