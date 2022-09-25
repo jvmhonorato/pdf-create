@@ -1,6 +1,7 @@
 const PdfPrinter = require('pdfmake')
 const fs = require('fs')
-
+const express = require('express')
+const app = express()
 
 //fonts types
 const fonts = {
@@ -88,7 +89,19 @@ styles:{
     
 }
 
+//LINK
+app.get('/get/:name',(req,res)=>{
+    const pdf = printer.createPdfKitDocument({
+        content: 'Óla '+req.params.name
+    })
+    //suggest the name of the file to be saved OBS: usar attachment no lugar de inline pra salvar automaticamente
+    res.header('Content-disposition', 'inline; filename=meud-pdf.pdf')
+    res.header('Content-type','application/pdf')
+    pdf.pipe(res)
+    pdf.end()
+})
 
+/*
 //link pdf content with the creation of a new pdf document
 const pdf = printer.createPdfKitDocument(docDefinition)
 
@@ -97,3 +110,10 @@ pdf.pipe(fs.createWriteStream('doc.pdf'))
 
 //finish procedure
 pdf.end()
+*/
+
+
+//Server listen
+app.listen(3000, () =>{
+    console.log('PDF running...')
+})

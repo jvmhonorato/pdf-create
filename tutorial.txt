@@ -17,3 +17,10 @@ ADD IMAGES
 
 ADD FOOTER
 9: em docDefinition apos styles add footer com callback pra retonar em todas as paginas o footer
+
+EXPRESS INTEGRATE
+10:npm install express
+
+11: crair mini servidor no index.js
+
+12: criar uma rota get pra criar pdf dinâmicamente e passar res.header pra pré sugerir o nome do pdf a na hora de salavr
