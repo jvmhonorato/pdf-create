@@ -9,3 +9,11 @@
 5: criar objeto fonts passado o caminho fonts/nomedafont.tts dentro dela
 
 6: passar uma variável docDefinition com um objeto com o content 
+
+7: Na variavel docDSefinition contem  o content: com o text(titulo do documento), a table(tabela com as colunas(widths) e linhas(body)), e tambem o styles com a estilização que se´ra chamda nasw funções de criação do conteúdo
+
+ADD IMAGES
+8; pra adicionar images crair pasta images/image.png em seguida add o caminho em content passando as dimensões da image com widht e height ou então com fit. 
+
+ADD FOOTER
+9: em docDefinition apos styles add footer com callback pra retonar em todas as paginas o footer

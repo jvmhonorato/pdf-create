@@ -40,6 +40,12 @@ const printer = new PdfPrinter(fonts)
 //pdf document models content 
 const docDefinition = {
     content:[
+        {
+            image: 'images/react.png',
+            // width: 100,
+            // height: 100,
+            fit: [80,100]
+        },
     {text:  'PDF content'},
     {
         table:{
@@ -58,8 +64,27 @@ styles:{
     inativo:{
         fontSize: 18,
         bold: true
+    },
+    
+ },
+ footer: (page, pages) => {
+    return {
+        columns: [
+            'Este documento é modelo de aprendizado de João Victor',
+            {
+                alignment: 'right',
+                text: [
+                    {text: page.toString(), italics:true},
+                    'de',
+                    {text: pages.toString(), italics: true}
+                ]
+            }
+        ],
+        margin: [
+            40,0
+        ]
     }
-}
+ }
     
 }
 
